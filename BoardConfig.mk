@@ -31,28 +31,40 @@ TARGET_CPU_SMP := true
 TARGET_USES_64_BIT_BINDER := true
 
 # Kernel Config
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-BOARD_KERNEL_BASE := 0x40078000
-BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_OFFSET := 0x00008000
-BOARD_KERNEL_TAGS_OFFSET := 0x0df88000
-BOARD_RAMDISK_OFFSET := 0x05f88000
-BOARD_SECOND_OFFSET := 0x00f00000
+#BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+#BOARD_KERNEL_BASE := 0x40078000
+#BOARD_KERNEL_PAGESIZE := 2048
+#BOARD_KERNEL_OFFSET := 0x00008000
+#BOARD_KERNEL_TAGS_OFFSET := 0x0df88000
+#BOARD_RAMDISK_OFFSET := 0x05f88000
+#BOARD_SECOND_OFFSET := 0x00f00000
 
-BOARD_MKBOOTIMG_ARGS := \
-    --kernel_offset $(BOARD_KERNEL_OFFSET) \
-    --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
-    --second_offset $(BOARD_SECOND_OFFSET)   \
-    --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+#BOARD_MKBOOTIMG_ARGS := \
+#    --kernel_offset $(BOARD_KERNEL_OFFSET) \
+#    --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
+#    --second_offset $(BOARD_SECOND_OFFSET)   \
+#    --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/bn/st18c7bnn/
-TARGET_KERNEL_CONFIG := st18c7bnn_defconfig
-TARGET_KERNEL_VARIANT_CONFIG := st18c7bnn_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(shell pwd)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+#TARGET_KERNEL_ARCH := arm64
+#TARGET_KERNEL_SOURCE := kernel/bn/st18c7bnn/
+#TARGET_KERNEL_CONFIG := st18c7bnn_defconfig
+#TARGET_KERNEL_VARIANT_CONFIG := st18c7bnn_defconfig
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(shell pwd)/prebuilts/gcc/linux-x86/aarch64/#aarch64-linux-android-4.9/bin/aarch64-linux-android-
+
+#BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
+#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
+TARGET_PREBUILT_KERNEL := device/bn/st18c7bnn/kernel
+BOARD_MTK_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
+BOARD_MKBOOTIMG_ARGS := --pagesize 2048 --base 0x40078000 --kernel_offset 0x00008000 --ramdisk_offset 0x05f88000 --second_offset 0x00f00000 --tags_offset 0x0df88000
 
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
+BOARD_KERNEL_IMAGE_NAME := zImage
+# For Mediatek Boot Image Headers
+BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 
 BOARD_HAS_MTK_HARDWARE := true
 
@@ -196,3 +208,6 @@ WITHOUT_CHECK_API := true
 
 # System Prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
+# Recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
