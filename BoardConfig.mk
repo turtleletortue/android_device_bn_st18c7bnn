@@ -55,9 +55,20 @@ TARGET_USES_64_BIT_BINDER := true
 #BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 TARGET_PREBUILT_KERNEL := device/bn/st18c7bnn/kernel
-BOARD_MTK_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
-BOARD_MKBOOTIMG_ARGS := --pagesize 2048 --base 0x40078000 --kernel_offset 0x00008000 --ramdisk_offset 0x05f88000 --second_offset 0x00f00000 --tags_offset 0x0df88000
+#BOARD_MKBOOTIMG_ARGS := --pagesize 2048 --base 0x40078000 --kernel_offset 0x00008000 --ramdisk_offset 0x05f88000 --second_offset 0x00f00000 --tags_offset 0x0df88000
+
+BOARD_KERNEL_BASE := 0x40078000
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_OFFSET := 0x00008000
+BOARD_KERNEL_TAGS_OFFSET := 0x14000000
+BOARD_RAMDISK_OFFSET := 0x15000000
+BOARD_SECOND_OFFSET := 0x00f00000
+
+BOARD_MKBOOTIMG_ARGS := \
+    --kernel_offset $(BOARD_KERNEL_OFFSET) \
+    --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
+    --second_offset $(BOARD_SECOND_OFFSET)   \
+    --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
@@ -132,30 +143,30 @@ BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun%d/file
 
 # Shims
-TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib/libwvm.so|libshim_wvm.so \
-    /system/lib/libgui_ext.so|libshim_gui.so \
-    /system/lib64/libgui_ext.so|libshim_gui.so \
-    /system/lib/libui_ext.so|libshim_ui.so \
-    /system/lib64/libui_ext.so|libshim_ui.so \
-    /system/bin/boot_logo_updater|libshim_asc.so \
-    /system/bin/kpoc_charger|libshim_asc.so \
-    /system/lib/libshowlogo.so|libshim_asc.so \
-    /system/bin/xlog|libshim_xlog.so \
-    /system/bin/program_binary_service|libshim_program_binary_service.so \
-    /system/lib/hw/audio.primary.mt8163.so|libshim_audio.so \
-    /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so \
-    /system/bin/audiocmdservice_atci|libshim_audio.so \
-    /system/lib/libcam_utils.so|libshim_asc.so \
-    /system/lib64/libcam_utils.so|libshim_asc.so \
-    /system/lib/libcam.utils.sensorlistener.so|libshim_gui.so \
-    /system/lib64/libcam.utils.sensorlistener.so|libshim_gui.so \
-    /system/lib/libsource.so|libshim_asc.so \
-    /system/lib64/libsource.so|libshim_asc.so \
-    /system/bin/sink|libshim_asc.so \
-    /system/lib/libsink.so|libshim_asc.so \
-    /system/lib64/libsink.so|libshim_asc.so \
-    /system/lib/libstagefright_soft_ddpdec.so|libshim_omx.so
+#TARGET_LD_SHIM_LIBS := \
+#    /system/vendor/lib/libwvm.so|libshim_wvm.so \
+#    /system/lib/libgui_ext.so|libshim_gui.so \
+#    /system/lib64/libgui_ext.so|libshim_gui.so \
+#   /system/lib/libui_ext.so|libshim_ui.so \
+#    /system/lib64/libui_ext.so|libshim_ui.so \
+#    /system/bin/boot_logo_updater|libshim_asc.so \
+#    /system/bin/kpoc_charger|libshim_asc.so \
+#    /system/lib/libshowlogo.so|libshim_asc.so \
+#    /system/bin/xlog|libshim_xlog.so \
+#    /system/bin/program_binary_service|libshim_program_binary_service.so \
+#    /system/lib/hw/audio.primary.mt8163.so|libshim_audio.so \
+#    /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so \
+#    /system/bin/audiocmdservice_atci|libshim_audio.so \
+#    /system/lib/libcam_utils.so|libshim_asc.so \
+#    /system/lib64/libcam_utils.so|libshim_asc.so \
+#    /system/lib/libcam.utils.sensorlistener.so|libshim_gui.so \
+#    /system/lib64/libcam.utils.sensorlistener.so|libshim_gui.so \
+#    /system/lib/libsource.so|libshim_asc.so \
+#    /system/lib64/libsource.so|libshim_asc.so \
+#    /system/bin/sink|libshim_asc.so \
+#    /system/lib/libsink.so|libshim_asc.so \
+#    /system/lib64/libsink.so|libshim_asc.so \
+#    /system/lib/libstagefright_soft_ddpdec.so|libshim_omx.so
 
 # Software Gatekeeper
 BOARD_USE_SOFT_GATEKEEPER := true
