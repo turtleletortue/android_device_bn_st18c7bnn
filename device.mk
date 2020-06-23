@@ -196,6 +196,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/meta_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/meta_init.rc \
     $(LOCAL_PATH)/rootdir/multi_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/multi_init.rc \
     $(LOCAL_PATH)/rootdir/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/ueventd.qcom.rc \
+    $(LOCAL_PATH)/rootdir/fstab.enableswap:root/fstab.enableswap \
+    $(LOCAL_PATH)/rootdir/init.mt8163.usb.rc:root/init.mt8163.usb.rc \
+    $(LOCAL_PATH)/rootdir/init.recovery.mt8163.rc:root/init.recovery.mt8163.rc
 
 #    $(LOCAL_PATH)/rootdir/ueventd.mt8163.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
 # Libshims
@@ -221,11 +224,6 @@ $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap
 
 # call hwui memory config
 #$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
-
-# System Prop
-include $(LOCAL_PATH)/vendor_prop.mk
-
-
 
 # Inherit vendor
 $(call inherit-product, vendor/bn/st18c7bnn/st18c7bnn-vendor.mk)
