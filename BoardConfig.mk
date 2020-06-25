@@ -64,8 +64,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x14000000
 BOARD_RAMDISK_OFFSET := 0x15000000
 BOARD_SECOND_OFFSET := 0x00f00000
 
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,32
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := "bootopt=64S3,32N2,32N2 androidboot.selinux=permissive"
 
 BOARD_MKBOOTIMG_ARGS := \
     --base $(BOARD_KERNEL_BASE) \
@@ -74,9 +73,9 @@ BOARD_MKBOOTIMG_ARGS := \
     --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
     --second_offset $(BOARD_SECOND_OFFSET)   \
     --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) \
-    --cmdline "bootopt=64S3,32N2,32N2"
+    --cmdline $(BOARD_KERNEL_CMDLINE)
 
-BOARD_KERNEL_IMAGE_NAME := zImage
+BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 # For Mediatek Boot Image Headers
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 
