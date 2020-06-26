@@ -91,6 +91,8 @@ BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 
 BOARD_HAS_MTK_HARDWARE := true
+BOARD_USES_MTK_HARDWARE := true
+MTK_HARDWARE := true
 
 # Build Vendor Image
 TARGET_COPY_OUT_VENDOR := vendor
