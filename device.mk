@@ -198,7 +198,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/ueventd.qcom.rc \
     $(LOCAL_PATH)/rootdir/fstab.enableswap:root/fstab.enableswap \
     $(LOCAL_PATH)/rootdir/init.mt8163.usb.rc:root/init.mt8163.usb.rc \
-    $(LOCAL_PATH)/rootdir/init.recovery.mt8163.rc:root/init.recovery.mt8163.rc
+    $(LOCAL_PATH)/rootdir/init.recovery.mt8163.rc:root/init.recovery.mt8163.rc 
+    
+#$(LOCAL_PATH)/rootdir/fstab.mt8163:root/fstab.mt8163
 
 #    $(LOCAL_PATH)/rootdir/ueventd.mt8163.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
 # Libshims
