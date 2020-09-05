@@ -7,7 +7,7 @@
 # ==============================================
 
 type factory_exec , exec_type, file_type;
-type factory ,domain;
+#type factory ,domain;
 
 # ==============================================
 # Android Policy Rule

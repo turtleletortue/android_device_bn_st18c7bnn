@@ -5,8 +5,8 @@
 # Type Declaration
 # ==============================================
 
-type aal_exec , exec_type, file_type;
-type aal ,domain;
+#type aal_exec , exec_type, file_type;
+#type aal ,domain;
 
 # ==============================================
 # Android Policy Rule
@@ -21,7 +21,7 @@ type aal ,domain;
 # ==============================================
 
 # permissive aal;
-init_daemon_domain(aal)
+#init_daemon_domain(aal)
 # unconfined_domain(aal)
 
 # Date : 2014/09/09 (or WK14.37)
@@ -29,7 +29,7 @@ init_daemon_domain(aal)
 # Purpose : allow Binder IPC
 binder_use(aal)
 binder_call(aal, binderservicedomain)
-binder_service(aal)
+#binder_service(aal)
 
 # Date : WK14.41
 # Operation : Migration

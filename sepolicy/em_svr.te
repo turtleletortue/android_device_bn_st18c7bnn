@@ -7,7 +7,7 @@
 # ==============================================
 
 type em_svr_exec , exec_type, file_type;
-type em_svr ,domain;
+#type em_svr ,domain;
 
 # ==============================================
 # Android Policy Rule

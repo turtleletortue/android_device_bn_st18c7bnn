@@ -6,8 +6,8 @@
 # Type Declaration
 # ==============================================
 
-type boot_logo_updater_exec , exec_type, file_type;
-type boot_logo_updater ,domain;
+#type boot_logo_updater_exec , exec_type, file_type;
+#type boot_logo_updater ,domain;
 
 # ==============================================
 # Android Policy Rule
@@ -21,7 +21,7 @@ type boot_logo_updater ,domain;
 # MTK Policy Rule
 # ==============================================
 
-init_daemon_domain(boot_logo_updater)
+#init_daemon_domain(boot_logo_updater)
 
 
 # Date : WK14.31

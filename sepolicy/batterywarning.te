@@ -6,8 +6,8 @@
 # Type Declaration
 # ==============================================
 
-type batterywarning_exec , exec_type, file_type;
-type batterywarning ,domain;
+#type batterywarning_exec , exec_type, file_type;
+#type batterywarning ,domain;
 
 # ==============================================
 # Android Policy Rule
@@ -21,7 +21,7 @@ type batterywarning ,domain;
 # MTK Policy Rule
 # ==============================================
 
-init_daemon_domain(batterywarning)
+#init_daemon_domain(batterywarning)
 
 # Date : 2014/10/15
 # Operation : Migration

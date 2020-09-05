@@ -6,8 +6,8 @@
 # Type Declaration
 # ==============================================
 
-type atcid_exec , exec_type, file_type;
-type atcid ,domain;
+#type atcid_exec , exec_type, file_type;
+#type atcid ,domain;
 
 # ==============================================
 # Android Policy Rule
@@ -20,7 +20,7 @@ type atcid ,domain;
 # ==============================================
 # MTK Policy Rule
 # ==============================================
-init_daemon_domain(atcid)
+#init_daemon_domain(atcid)
 allow atcid self:capability dac_override;
 allow atcid init:unix_stream_socket connectto;
 allow atcid property_socket:sock_file write;

@@ -6,7 +6,7 @@
 # Type Declaration
 # ==============================================
 type emdlogger_exec , exec_type, file_type;
-type emdlogger, domain;
+#type emdlogger, domain;
 
 
 # ==============================================

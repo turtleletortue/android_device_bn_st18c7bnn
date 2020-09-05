@@ -215,7 +215,7 @@ PRODUCT_PACKAGES += \
      libshim_drm 
 
 # Hidl
-include $(LOCAL_PATH)/hidl.mk
+include $(LOCAL_PATH)/libhidl/Android.mk
 
 # System Prop
 include $(LOCAL_PATH)/vendor_prop.mk
@@ -226,6 +226,10 @@ $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap
 
 # call hwui memory config
 #$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
+
+# VNDK-SP:
+PRODUCT_PACKAGES += \
+    vndk-sp
 
 # Inherit vendor
 $(call inherit-product, vendor/bn/st18c7bnn/st18c7bnn-vendor.mk)

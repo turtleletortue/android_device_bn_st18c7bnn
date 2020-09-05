@@ -6,8 +6,8 @@
 # Type Declaration
 # ==============================================
 
-type GoogleOtaBinder_exec , exec_type, file_type;
-type GoogleOtaBinder ,domain;
+#type GoogleOtaBinder_exec , exec_type, file_type;
+#type GoogleOtaBinder ,domain;
 
 # ==============================================
 # Android Policy Rule
@@ -22,7 +22,7 @@ type GoogleOtaBinder ,domain;
 # ==============================================
 
 #permissive GoogleOtaBinder;
-init_daemon_domain(GoogleOtaBinder)
+#init_daemon_domain(GoogleOtaBinder)
 #unconfined_domain(GoogleOtaBinder)
 
 # Date : 2014/09/10

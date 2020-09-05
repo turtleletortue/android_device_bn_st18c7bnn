@@ -6,8 +6,8 @@
 # Type Declaration
 # ==============================================
 
-type audiocmdservice_atci_exec , exec_type, file_type;
-type audiocmdservice_atci ,domain;
+#type audiocmdservice_atci_exec , exec_type, file_type;
+#type audiocmdservice_atci ,domain;
 
 # ==============================================
 # Android Policy Rule
@@ -56,4 +56,4 @@ allow audiocmdservice_atci self:capability { fowner chown dac_override fsetid };
 binder_use(audiocmdservice_atci)
 binder_call(audiocmdservice_atci, mediaserver)
 
-init_daemon_domain(audiocmdservice_atci)
+#init_daemon_domain(audiocmdservice_atci)

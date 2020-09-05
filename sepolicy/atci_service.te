@@ -6,8 +6,8 @@
 # Type Declaration
 # ==============================================
 
-type atci_service_exec , exec_type, file_type;
-type atci_service ,domain;
+#type atci_service_exec , exec_type, file_type;
+#type atci_service ,domain;
 
 # ==============================================
 # Android Policy Rule
@@ -20,7 +20,7 @@ type atci_service ,domain;
 # ==============================================
 # MTK Policy Rule
 # ==============================================
-init_daemon_domain(atci_service)
+#init_daemon_domain(atci_service)
 
 # Date : 2014/09/09 (or WK14.37)
 # Operation : Migration
