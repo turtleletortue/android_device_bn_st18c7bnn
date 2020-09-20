@@ -4,8 +4,8 @@
 # ==============================================
 # Type Declaration
 # ==============================================
-type spm_loader_exec , exec_type, file_type, vendor_file_type;
-type spm_loader ,domain;
+#type spm_loader_exec , exec_type, file_type, vendor_file_type;
+#type spm_loader ,domain;
 
 # ==============================================
 # MTK Policy Rule
@@ -13,7 +13,7 @@ type spm_loader ,domain;
 # date: 2015/6/18 wk1525
 # purpose: load spm firmware
 # ==============================================
-init_daemon_domain(spm_loader)
+#init_daemon_domain(spm_loader)
 
 # Read to /dev/spm
 allow spm_loader self:capability { dac_read_search dac_override };

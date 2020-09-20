@@ -5,13 +5,13 @@
 # ==============================================
 # Type Declaration
 # ==============================================
-type nvram_agent_binder_exec , exec_type, file_type, vendor_file_type;
-type nvram_agent_binder ,domain;
+#type nvram_agent_binder_exec , exec_type, file_type, vendor_file_type;
+#type nvram_agent_binder ,domain;
 
 # ==============================================
 # MTK Policy Rule
 # ==============================================
-init_daemon_domain(nvram_agent_binder)
+#init_daemon_domain(nvram_agent_binder)
 
 # Date : WK14.35
 # Operation : access nvram by binder 

@@ -4,8 +4,8 @@
 # ==============================================
 # Type Declaration
 # ==============================================
-type md_ctrl, domain;
-type md_ctrl_exec, exec_type, file_type, vendor_file_type;
+#type md_ctrl, domain;
+#type md_ctrl_exec, exec_type, file_type, vendor_file_type;
 
 # ==============================================
 # MTK Policy Rule
@@ -14,7 +14,7 @@ type md_ctrl_exec, exec_type, file_type, vendor_file_type;
 # Operation : Migration
 # Purpose : Start md_ctrl
 
-init_daemon_domain(md_ctrl)
+#init_daemon_domain(md_ctrl)
 allow md_ctrl ccci_device:chr_file { rw_file_perms };
 allow md_ctrl devpts:chr_file { rw_file_perms };
 allow md_ctrl self:capability dac_override;

@@ -29,8 +29,8 @@ $(INSTALLED_KERNEL_TARGET).mtk: $(INSTALLED_KERNEL_TARGET).mtk.header
 		> $@
 
 $(INSTALLED_RAMDISK_TARGET).mtk.header: $(INSTALLED_RAMDISK_TARGET)
-	#size=$$($(call get-file-size,$(INSTALLED_RAMDISK_TARGET))); \
-	#	$(call make_header, $$((size)), "ROOTFS", $@)
+	size=$$($(call get-file-size,$(INSTALLED_RAMDISK_TARGET))); \
+		$(call make_header, $$((size)), "ROOTFS", $@)
 $(INSTALLED_RAMDISK_TARGET).mtk: $(INSTALLED_RAMDISK_TARGET).mtk.header
 	$(call pretty,"Adding MTK header to ramdisk.")
 	cat $(INSTALLED_RAMDISK_TARGET).mtk.header $(INSTALLED_RAMDISK_TARGET) \

@@ -4,13 +4,13 @@
 # ==============================================
 # Type Declaration
 # ==============================================
-type muxreport_exec , exec_type, file_type, vendor_file_type;
-type muxreport ,domain;
+#type muxreport_exec , exec_type, file_type, vendor_file_type;
+#type muxreport ,domain;
 
 # ==============================================
 # MTK Policy Rule
 # ==============================================
-init_daemon_domain(muxreport)
+#init_daemon_domain(muxreport)
 
 # Capabilities assigned for muxreport
 allow muxreport self:capability dac_override;

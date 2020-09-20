@@ -4,13 +4,13 @@
 # ==============================================
 # Type Declaration
 # ==============================================
-type wifi2agps_exec , exec_type, file_type, vendor_file_type;
-type wifi2agps ,domain;
+#type wifi2agps_exec , exec_type, file_type, vendor_file_type;
+#type wifi2agps ,domain;
 
 # ==============================================
 # MTK Policy Rule
 # ==============================================
-init_daemon_domain(wifi2agps)
+#init_daemon_domain(wifi2agps)
 
 # Date : WK14.34
 # Operation : Migration

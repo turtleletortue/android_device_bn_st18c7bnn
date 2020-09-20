@@ -69,7 +69,7 @@ BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_TAGS_OFFSET := 0x14000000
-BOARD_RAMDISK_OFFSET := 0x291CCE00
+BOARD_RAMDISK_OFFSET := 0x15000000
 #0x03F88000
 #0x291CCE00
 #0x15000000
@@ -151,10 +151,14 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1342177280
 BOARD_CACHEIMAGE_PARTITION_SIZE := 444596224
 BOARD_VENDORIMAGE_PARTITION_SIZE := 268435456
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12877312000
+BOARD_NEEDS_VENDORIMAGE_SYMLINK :=  true
 BOARD_FLASH_BLOCK_SIZE := 131072
+
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 TARGET_USES_MKE2FS := true
 
+TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 BLOCK_BASED_OTA := true
@@ -209,7 +213,7 @@ TARGET_OTA_ASSERT_DEVICE:= st18c7bnnxx
 USE_MINIKIN := true
 
 # Fix video autoscaling on old OMX decoders
-TARGET_OMX_LEGACY_RESCALING:= true
+#TARGET_OMX_LEGACY_RESCALING:= true
 
 # Webkit
 ENABLE_WEBGL := true
@@ -222,7 +226,7 @@ TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
 #TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_mtk
 
 #BACKLIGHTS
-TARGET_PROVIDES_LIBLIGHT := true
+#TARGET_PROVIDES_LIBLIGHT := true
 
 # System Prop
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
@@ -237,8 +241,6 @@ TARGET_NO_SENSOR_PERMISSION_CHECK := true
 #Use dlmalloc instead of jemalloc for mallocs
 MALLOC_SVELTE := true
 
-# Disable API check
-WITHOUT_CHECK_API := true
 
 # System Prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
@@ -248,17 +250,20 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 
 # Sepolicy
 BOARD_SEPOLICY_DIRS += \
-        $(DEVICE_PATH)/sepolicy \
-        $(DEVICE_PATH)/sepolicy-mtk/basic/non_plat \
-        $(DEVICE_PATH)/sepolicy-mtk/bsp/non_plat 
+        $(DEVICE_PATH)/sepolicy
 
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-        $(DEVICE_PATH)/sepolicy-mtk/basic/plat_public \
-        $(DEVICE_PATH)/sepolicy-mtk/bsp/plat_public
+SELINUX_IGNORE_NEVERALLOWS := true
+#        $(DEVICE_PATH)/sepolicy \
+#        $(DEVICE_PATH)/sepolicy-mtk/basic/non_plat \
+#        $(DEVICE_PATH)/sepolicy-mtk/bsp/non_plat 
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-        $(DEVICE_PATH)/sepolicy-mtk/basic/plat_private \
-        $(DEVICE_PATH)/sepolicy-mtk/bsp/plat_private
+#BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
+#        $(DEVICE_PATH)/sepolicy-mtk/basic/plat_public \
+#        $(DEVICE_PATH)/sepolicy-mtk/bsp/plat_public
+
+#BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
+#        $(DEVICE_PATH)/sepolicy-mtk/basic/plat_private \
+#        $(DEVICE_PATH)/sepolicy-mtk/bsp/plat_private
 
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true

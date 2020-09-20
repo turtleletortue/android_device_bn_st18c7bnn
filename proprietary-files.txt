@@ -125,3 +125,6 @@ lib/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 #lib64/vendor.mediatek.hardware.power@1.1.so
 lib/vendor.mediatek.hardware.power@1.1.so
 
+# mtkdrm
+lib/mtkdrm/libdrmctaplugin.so
+lib/mtkdrm/libdrmmtkplugin.so

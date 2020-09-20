@@ -336,6 +336,7 @@ vendor/firmware/WMT_SOC.cfg
 #vendor/lib/egl/libEGL_mtk.so
 #vendor/lib/egl/libGLESv1_CM_mtk.so
 #vendor/lib/egl/libGLESv2_mtk.so
+vendor/lib/egl/libGLES_mali.so
 vendor/lib/hw/android.hardware.audio@2.0-impl-mediatek.so
 #vendor/lib/hw/android.hardware.audio.effect@2.0-impl.so
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-mediatek.so
@@ -552,3 +553,7 @@ vendor/lib/vendor.mediatek.hardware.power@1.1_vendor.so
 vendor/lib/vendor.mediatek.hardware.pq@2.0_vendor.so
 vendor/lib/vendor.mediatek.hardware.radio@2.0_vendor.so
 vendor/lib/vendor.mediatek.hardware.radio.deprecated@1.1_vendor.so
+
+vendor/bin/hw/vendor.mediatek.hardware.keymanage@1.0-service
+vendor/lib/hw/audio.r_submix.mt8163.so
+vendor/lib/hw/audio.usb.mt8163.so

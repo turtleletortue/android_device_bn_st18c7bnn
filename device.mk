@@ -76,22 +76,24 @@ PRODUCT_COPY_FILES += \
 #    frameworks/native/data/etc/android.hardware.microphone.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.microphone.xml \
 
 # Ramdisk
-#PRODUCT_PACKAGES += \
-#    factory_init.connectivity.rc \
-#    factory_init.project.rc \
-#    factory_init.rc \
-#    init.connectivity.rc \
-#    init.modem.rc \
-#    init.mt8163.rc \
-#    init.project.rc \
-#    init.sensor_1_0.rc \
-#    meta_init.connectivity.rc \
-#    meta_init.modem.rc \
-#    meta_init.project.rc \
-#    meta_init.rc \
-#    multi_init.rc \
-#    fstab.mt8163 \
-#    ueventd.qcom.rc \
+PRODUCT_PACKAGES += \
+    factory_init.connectivity.rc \
+    factory_init.project.rc \
+    factory_init.rc \
+    init.connectivity.rc \
+    init.modem.rc \
+    init.mt8163.rc \
+    init.project.rc \
+    init.sensor_1_0.rc \
+    meta_init.connectivity.rc \
+    meta_init.modem.rc \
+    meta_init.project.rc \
+    meta_init.rc \
+    multi_init.rc \
+    fstab.mt8163 \
+    ueventd.mt8163.rc \
+    init.recovery.mt8173.rc \
+    init.mt8163.usb.rc \
 
 # Seccomp
 PRODUCT_COPY_FILES += \
@@ -122,18 +124,13 @@ PRODUCT_PACKAGES += \
    libaudio_shim \
    audiofix
 
-# Wi-Fi
 PRODUCT_PACKAGES += \
     libwpa_client \
     hostapd \
-    dhcpcd.conf \
+    hostapd_cli \
+    libwifi-hal-mt66xx \
     wpa_supplicant \
-    wpa_supplicant.conf \
-    libwifi-hal-mt66xx
-
-# Sensor
-PRODUCT_PACKAGES += \
-    libsensorndkbridge
+    android.hardware.wifi@1.0-service
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -179,43 +176,43 @@ PRODUCT_PACKAGES += \
 
 
 # Ramdisk
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/fstab.mt8163:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8163 \
-    $(LOCAL_PATH)/rootdir/init.mt8163.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mt8163.rc \
-    $(LOCAL_PATH)/rootdir/init.mt8163.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mt8163.usb.rc \
-    $(LOCAL_PATH)/rootdir/factory_init.connectivity.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/factory_init.connectivity.rc \
-    $(LOCAL_PATH)/rootdir/factory_init.project.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/factory_init.project.rc \
-    $(LOCAL_PATH)/rootdir/factory_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/factory_init.rc \
-    $(LOCAL_PATH)/rootdir/init.connectivity.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc \
-    $(LOCAL_PATH)/rootdir/init.modem.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.modem.rc \
-    $(LOCAL_PATH)/rootdir/init.project.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.project.rc \
-    $(LOCAL_PATH)/rootdir/init.sensor_1_0.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.sensor_1_0.rc \
-    $(LOCAL_PATH)/rootdir/meta_init.connectivity.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/meta_init.connectivity.rc \
-    $(LOCAL_PATH)/rootdir/meta_init.modem.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/meta_init.modem.rc \
-    $(LOCAL_PATH)/rootdir/meta_init.project.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/meta_init.project.rc \
-    $(LOCAL_PATH)/rootdir/meta_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/meta_init.rc \
-    $(LOCAL_PATH)/rootdir/multi_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/multi_init.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/ueventd.qcom.rc \
-    $(LOCAL_PATH)/rootdir/fstab.enableswap:root/fstab.enableswap \
-    $(LOCAL_PATH)/rootdir/init.mt8163.usb.rc:root/init.mt8163.usb.rc \
-    $(LOCAL_PATH)/rootdir/init.recovery.mt8163.rc:root/init.recovery.mt8163.rc 
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/rootdir/fstab.mt8163:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8163 \
+#    $(LOCAL_PATH)/rootdir/init.mt8163.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mt8163.rc \
+#    $(LOCAL_PATH)/rootdir/init.mt8163.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mt8163.usb.rc \
+#    $(LOCAL_PATH)/rootdir/factory_init.connectivity.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/factory_init.connectivity.rc \
+#    $(LOCAL_PATH)/rootdir/factory_init.project.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/factory_init.project.rc \
+#    $(LOCAL_PATH)/rootdir/factory_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/factory_init.rc \
+#    $(LOCAL_PATH)/rootdir/init.connectivity.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc \
+#    $(LOCAL_PATH)/rootdir/init.modem.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.modem.rc \
+#    $(LOCAL_PATH)/rootdir/init.project.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.project.rc \
+#    $(LOCAL_PATH)/rootdir/init.sensor_1_0.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.sensor_1_0.rc \
+#    $(LOCAL_PATH)/rootdir/meta_init.connectivity.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/meta_init.connectivity.rc \
+#    $(LOCAL_PATH)/rootdir/meta_init.modem.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/meta_init.modem.rc \
+#    $(LOCAL_PATH)/rootdir/meta_init.project.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/meta_init.project.rc \
+#    $(LOCAL_PATH)/rootdir/meta_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/meta_init.rc \
+#    $(LOCAL_PATH)/rootdir/multi_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/multi_init.rc \
+#    $(LOCAL_PATH)/rootdir/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/ueventd.qcom.rc \
+#    $(LOCAL_PATH)/rootdir/fstab.enableswap:root/fstab.enableswap \
+#    $(LOCAL_PATH)/rootdir/init.mt8163.usb.rc:root/init.mt8163.usb.rc \
+#    $(LOCAL_PATH)/rootdir/init.recovery.mt8163.rc:root/init.recovery.mt8163.rc 
     
 #$(LOCAL_PATH)/rootdir/fstab.mt8163:root/fstab.mt8163
 
 #    $(LOCAL_PATH)/rootdir/ueventd.mt8163.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
 # Libshims
-PRODUCT_PACKAGES += \
-     libshim_asp \
-     libshim_egl \
-     libshim_gui \
-     libshim_camera \
-     libshim_sensor \
-     libshim_protobuf \
-     libshim_dha \
-     libshim_drm 
+#PRODUCT_PACKAGES += \
+#     libshim_asp \
+##     libshim_egl \
+ #    libshim_gui \
+ #    libshim_camera \
+  #   libshim_sensor \
+  #   libshim_protobuf \
+  #   libshim_dha \
+  #   libshim_drm 
 
 # Hidl
-include $(LOCAL_PATH)/libhidl/Android.mk
+#include $(LOCAL_PATH)/libhidl/Android.bp
 
 # System Prop
 include $(LOCAL_PATH)/vendor_prop.mk
@@ -230,6 +227,68 @@ $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap
 # VNDK-SP:
 PRODUCT_PACKAGES += \
     vndk-sp
+
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
+
+# Sensor
+PRODUCT_PACKAGES += \
+    libsensorndkbridge \
+    android.hardware.sensors@1.0-impl-mediatek \
+    android.hardware.sensors@1.0-service-mediatek
+
+PRODUCT_PACKAGES += \
+    libnbaio_mono
+PRODUCT_PACKAGES += \
+    android.hardware.audio.effect@2.0-impl \
+
+# Display
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
+
+# DRM
+PRODUCT_PACKAGES += \
+    libdrm \
+    libmockdrmcryptoplugin \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service
+
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service
+
+# FM
+PRODUCT_PACKAGES += \
+    android.hardware.broadcastradio@1.1-impl \
+    android.hardware.broadcastradio@1.1-service
+
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service
+
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0
+
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
+
+# Light
+PRODUCT_PACKAGES += \
+    lights.mt8173 \
+    android.hardware.light@2.0-impl-mediatek \
+    android.hardware.light@2.0-service-mediatek
 
 # Inherit vendor
 $(call inherit-product, vendor/bn/st18c7bnn/st18c7bnn-vendor.mk)

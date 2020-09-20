@@ -4,9 +4,9 @@
 # ==============================================
 # Type Declaration
 # ==============================================
-type fuelgauged ,domain;
-type fuelgauged_exec , exec_type, file_type, vendor_file_type;
-type fuelgauged_file, file_type, data_file_type;
+#type fuelgauged ,domain;
+#type fuelgauged_exec , exec_type, file_type, vendor_file_type;
+#type fuelgauged_file, file_type, data_file_type;
 
 # ==============================================
 # Android Policy Rule
@@ -20,7 +20,7 @@ type fuelgauged_file, file_type, data_file_type;
 # MTK Policy Rule
 # ==============================================
 
-init_daemon_domain(fuelgauged)
+#init_daemon_domain(fuelgauged)
 
 # Data : WK14.43
 # Operation : Migration

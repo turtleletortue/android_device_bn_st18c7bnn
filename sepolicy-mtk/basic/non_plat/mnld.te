@@ -4,15 +4,15 @@
 # ==============================================
 # Type Declaration
 # ==============================================
-type mnld, domain;
-type mnld_exec, exec_type, file_type, vendor_file_type;
+#type mnld, domain;
+#type mnld_exec, exec_type, file_type, vendor_file_type;
 typeattribute mnld mlstrustedsubject;
 
 # ==============================================
 # MTK Policy Rule
 # ==============================================
 # STOPSHIP: Permissive is not allowed. CTS violation!
-init_daemon_domain(mnld)
+#init_daemon_domain(mnld)
 
 net_domain(mnld)
 # Purpose : For communicate with AGPSD by socket

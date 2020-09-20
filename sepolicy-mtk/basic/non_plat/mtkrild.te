@@ -4,13 +4,13 @@
 # ==============================================
 # Type Declaration
 # ==============================================
-type mtkrild_exec , exec_type, file_type, vendor_file_type;
-type mtkrild ,domain;
+#type mtkrild_exec , exec_type, file_type, vendor_file_type;
+#type mtkrild ,domain;
 
 # ==============================================
 # MTK Policy Rule
 # ==============================================
-init_daemon_domain(mtkrild)
+#init_daemon_domain(mtkrild)
 net_domain(mtkrild)
 
 # Trigger module auto-load.

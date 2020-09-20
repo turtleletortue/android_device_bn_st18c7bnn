@@ -4,13 +4,13 @@
 # ==============================================
 # Type Declaration
 # ==============================================
-type mmc_ffu, domain;
-type mmc_ffu_exec, exec_type, file_type, vendor_file_type;
+#type mmc_ffu, domain;
+#type mmc_ffu_exec, exec_type, file_type, vendor_file_type;
 
 # ==============================================
 # MTK Policy Rule
 # ==============================================
-init_daemon_domain(mmc_ffu)
+#init_daemon_domain(mmc_ffu)
 # Purpose: For seek file size
 allow mmc_ffu block_device:dir r_dir_perms;
 

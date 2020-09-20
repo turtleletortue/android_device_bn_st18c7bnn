@@ -4,13 +4,13 @@
 # ==============================================
 # Type Declaration
 # ==============================================
-type gsm0710muxd, domain;
-type gsm0710muxd_exec , exec_type, file_type, vendor_file_type;
+#type gsm0710muxd, domain;
+#type gsm0710muxd_exec , exec_type, file_type, vendor_file_type;
 
 # ==============================================
 # MTK Policy Rule
 # ==============================================
-init_daemon_domain(gsm0710muxd)
+#init_daemon_domain(gsm0710muxd)
 
 # Capabilities assigned for gsm0710muxd
 allow gsm0710muxd self:capability { chown fowner setuid };
