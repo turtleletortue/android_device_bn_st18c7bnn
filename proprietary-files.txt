@@ -195,7 +195,7 @@ etc/wifi-apns.xml
 etc/usb_audio_policy_configuration.xml
 etc/r_submix_audio_policy_configuration.xml
 etc/init/terserver.rc
-etc/init/bootlogoupdater.rc
+#etc/init/bootlogoupdater.rc
 etc/init/batterywarning.rc
 etc/default_volume_tables.xml
 etc/audio_policy_volumes.xml
@@ -212,7 +212,7 @@ bin/met-cmd
 bin/meta_tst
 bin/lcdc_screen_cap
 #bin/hdmi
-bin/boot_logo_updater
+#bin/boot_logo_updater
 bin/batterywarning
 bin/badblocks
 

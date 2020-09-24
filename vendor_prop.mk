@@ -116,7 +116,6 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.mtk_widevine_drm_l3_support=1 \
     ro.mtk_wlan_support=1 \
     ro.mtk_wmv_playback_support=1 \
-    ro.mtk_world_phone_policy=0 \
     ro.num_md_protocol=2 \
     ro.opa.eligible_device=true \
     ro.opengles.version=196609 \
