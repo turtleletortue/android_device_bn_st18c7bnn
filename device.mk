@@ -85,9 +85,8 @@ PRODUCT_PACKAGES += \
     multi_init.rc \
     fstab.mt8163 \
     ueventd.mt8163.rc \
-    init.recovery.mt8173.rc \
-
-#    init.mt8163.usb.rc \
+    init.recovery.mt8163.rc \
+    init.mt8163.usb.rc \
 
 # Seccomp
 PRODUCT_COPY_FILES += \
@@ -234,6 +233,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libnbaio_mono
+
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@2.0-impl \
 
@@ -250,8 +250,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libdrm \
     libmockdrmcryptoplugin \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service
+    android.hardware.drm@1.0-impl 
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -266,7 +265,7 @@ PRODUCT_PACKAGES += \
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
+    android.hardware.gatekeeper@1.0-service 
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -276,7 +275,7 @@ PRODUCT_PACKAGES += \
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
-    android.hardware.keymaster@3.0-service
+    android.hardware.keymaster@3.0-service 
 
 # Light
 PRODUCT_PACKAGES += \
@@ -286,8 +285,8 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl \
-    android.hardware.thermal@1.0-service
+    android.hardware.thermal@1.0 \
+    android.hardware.thermal@1.1 \
 
 # USB HAL 
 PRODUCT_PACKAGES += \
@@ -320,10 +319,6 @@ PRODUCT_PACKAGES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-service-mediatek
-
-# Merged hal service
-PRODUCT_PACKAGES += \
-    merged_hal_service.rc
 
 # Inherit vendor
 $(call inherit-product, vendor/bn/st18c7bnn/st18c7bnn-vendor.mk)

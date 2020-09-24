@@ -161,8 +161,8 @@ lib/libja3m.so
 lib/libj2v8.so
 lib/libitype.so
 lib/libimagepipeline.so
-lib/libhdmiservice.so
-lib/libhdmi.so
+#lib/libhdmiservice.so
+#lib/libhdmi.so
 lib/libgui_debug.so
 lib/libgnustl_shared.so
 lib/libfw_drmutils.so
@@ -211,7 +211,7 @@ bin/terservice
 bin/met-cmd
 bin/meta_tst
 bin/lcdc_screen_cap
-bin/hdmi
+#bin/hdmi
 bin/boot_logo_updater
 bin/batterywarning
 bin/badblocks

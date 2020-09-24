@@ -355,10 +355,10 @@ vendor/lib/hw/android.hardware.camera.provider@2.4-impl-mediatek.so
 vendor/lib/hw/audio.primary.mt8163.so
 #vendor/lib/hw/audio.r_submix.default.so
 #vendor/lib/hw/audio.usb.default.so
-vendor/lib/hw/gatekeeper.trustkernel.so:vendor/lib/hw/gatekeeper.mt8163.so
+vendor/lib/hw/gatekeeper.mt8163.so
 vendor/lib/hw/gralloc.mt8163.so
 vendor/lib/hw/hwcomposer.mt8163.so
-vendor/lib/hw/keystore.v2.trustkernel.so:vendor/lib/hw/keystore.mt8163.so
+#vendor/lib/hw/keystore.v2.trustkernel.so:vendor/lib/hw/keystore.mt8163.so
 #vendor/lib/hw/kmsetkey.trustkernel.so:vendor/lib/hw/kmsetkey.mt8163.so
 vendor/lib/hw/libSoftGatekeeper.so
 #vendor/lib/hw/lights.mt8163.so

@@ -1,16 +1,12 @@
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-
 # Android Go defaults
 $(call inherit-product, $(SRC_TARGET_DIR)/product/go_defaults.mk)
-
-# Inherit from st18c7bnn device
-$(call inherit-product, $(LOCAL_PATH)/device.mk)
-
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 $(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+
+# Inherit from st18c7bnn device
+$(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 PRODUCT_BRAND := nook
 PRODUCT_DEVICE := st18c7bnn
