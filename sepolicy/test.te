@@ -1,0 +1,4 @@
+
+allow bootanim mediaserver:binder call;
+allow bootanim mediaserver:binder transfer;
+
