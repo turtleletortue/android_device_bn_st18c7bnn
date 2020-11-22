@@ -122,8 +122,7 @@ PRODUCT_PACKAGES += \
     hostapd \
     hostapd_cli \
     libwifi-hal-mt66xx \
-    wpa_supplicant \
-    android.hardware.wifi@1.0-service
+    wpa_supplicant 
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -167,6 +166,9 @@ PRODUCT_PACKAGES += \
     libbluetooth_mtk \
     libbt-vendor 
 
+# MTKRC Path
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.mtkrc.path=/vendor/etc/init/hw/ \
 
 # Ramdisk
 #PRODUCT_COPY_FILES += \

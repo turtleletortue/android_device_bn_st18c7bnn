@@ -128,3 +128,4 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     service.wcn.driver.ready=no \
     wfd.dummy.enable=1 \
     wfd.iframesize.level=0 \
+    ro.mtkrc.path=/vendor/etc/init/hw/ \
