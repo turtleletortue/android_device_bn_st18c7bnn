@@ -128,3 +128,9 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     wfd.dummy.enable=1 \
     wfd.iframesize.level=0 \
     ro.mtkrc.path=/vendor/etc/init/hw/ \
+
+# Force Lock Screen Rotation
+PRODUCT_PRODUCT_PROPERTIES += \
+    log.tag.launcher_force_rotate=VERBOSE \
+    lockscreen.rot_override=true
+
