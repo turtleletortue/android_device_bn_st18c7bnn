@@ -130,7 +130,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  \
     ro.mtkrc.path=/vendor/etc/init/hw/ \
 
 # Force Lock Screen Rotation
-PRODUCT_PRODUCT_PROPERTIES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     log.tag.launcher_force_rotate=VERBOSE \
     lockscreen.rot_override=true
 
